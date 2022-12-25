@@ -1,0 +1,57 @@
+doctype html
+html(lang='ru')
+html
+    head
+        script(src="./public/scripts/bookList.js")
+        link(rel="stylesheet", href="/public/css/style.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    body
+        .wrapper
+            .header
+                .header__row
+                    h1= title
+            .content
+                .container
+                    .content__row1
+                        a(class = "content__btn1 btn", onclick = "showAll()") Все книги
+                        a(class = "content__btn2 btn", onclick = "showExpired()") С истекшим сроком возврата
+                        a(class = "content__btn3 btn", onclick="showAvailable()") Доступные
+                    .content_row2        
+                        .content_list
+                            table(id="table1")
+                                tr
+                                    th
+                                    th Название
+                                    th Автор
+                                    th Год выпуска
+                                    th Наличие
+                                    th Дата возврата
+
+                                for item in books
+                                    tr
+                                        th
+                                            if item.in_library === "нет"
+                                                button(class = "delete" disabled = true style = "cursor: not-allowed") 
+                                                    i(class = "fa fa-trash")
+                                            else
+                                                button(class = "delete", id = item.id,  onclick = "del(this)")
+                                                    i(class = "fa fa-trash")
+                                        th
+                                            a(href="/books/"+item.id style = "text-decoration: underline") #{item.name}
+                                        th #{item.au}
+                                        th #{item.date}
+                                        th #{item.in_library}
+                                        th #{item.return_date}
+                            table(id="table2", style="visibility: visible")
+                                form(action = "/books" method = "POST")
+                                    th
+                                        button( class = "add") 
+                                            i(class = "fa fa-plus-square-o" aria-hidden = "true")
+                                    th
+                                        input(name = "name", placeholder = "Название", type = "text", required)
+                                    th
+                                        input(name = "au", placeholder = "Автор", type = "text", required)
+                                    th
+                                        input(name = "date", type = "date", required)
+                                    th
+                                    th            

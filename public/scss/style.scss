@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-weight: 550;
+    text-transform: uppercase;
+    color: rgb(106, 106, 106);
+}
+
+input {
+    font-family: Arial;
+    text-transform: uppercase;
+    height: 30px;
+    border: 1px solid #818181;
+    transition: box-shadow 0.2s ease-in-out;
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 10px 5px #4683b461;
+    }
+}
+
+.delete,
+.add {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    font-size: 25px;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 50px 0;
+}
+
+tbody tr:nth-child(odd) {
+    a, i {
+        color: #B0C4DE;
+    }
+    background-color: white;
+    color: #B0C4DE;
+}
+
+tbody tr:nth-child(even) {
+    a, i {
+        color: white;
+    }
+    background-color: #B0C4DE;
+    color: white;
+}
+
+
+.btn {
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+        color:#4682B4;
+        transform: translateY(-5px);
+    }
+}
+
+.btn__book {
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    color: white;
+    background-color: #B0C4DE;
+    border: 1px solid #91a8c6;
+    font-weight: 550;
+    font-size: 16px;
+    transition: backgroung 0.2s ease-in-out;
+    text-transform: uppercase;
+
+    &:hover {
+            background: lighten($color: #B0C4DE, $amount: 5%);
+        }
+    
+    &:active {
+        background: darken($color: #B0C4DE, $amount: 5%);
+    }
+
+}
+
+.btn__ok {
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    color: white;
+    background-color: #6f8198;
+    border: 1px solid #455366;
+    border-radius: 10px;
+    font-weight: 550;
+    font-size: 16px;
+    transition: backgroung 0.2s ease-in-out;
+    text-transform: uppercase;
+
+    &:hover {
+        background: darken($color: #6f8198, $amount: 5%);
+    }
+
+    &:active {
+        background: darken($color: #6f8198, $amount: 10%);
+    }
+}
+
+.entry {
+    height: 50px;
+    background-color: #B0C4DE;
+    border: 1px solid #91a8c6;
+    color: white;
+    font-weight: 550;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 15px;
+    margin: 0 auto;
+    transition: backgroung 0.2s ease-in-out;
+
+    &:hover {
+        background: lighten($color: #B0C4DE, $amount: 5%);
+    }
+    &:active {
+        background: darken($color: #B0C4DE, $amount: 5%);
+    }
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    padding: 10px;
+
+    &:hover {
+            color: lighten($color: rgb(106, 106, 106), $amount: 10%);
+        }
+    
+        &:active {
+            color: darken($color: rgb(106, 106, 106), $amount: 10%);
+        }
+}
+
+.modal {
+    display: none;
+    text-align: center;
+
+    &__content {
+        position: fixed;
+        z-index: 1;
+        top: 200px;
+        left: 475px;
+        border: 1px solid #91a8c6;
+        border-radius: 20px;
+        box-shadow: 0 0 10px 5px #00000018;
+        width: 600px;
+        height: 315px;
+        background-color: #B0C4DE;
+
+        input {
+            border-radius: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    }
+}
+
+.overlay {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #B0C4DE;
+    height: 70px;
+    h1 {
+        margin: 3px 0 0 0;
+        color: white;
+        font-size: 50px;
+        text-align: center;
+        font-family: 'Great Vibes';
+        text-transform: none;
+        font-weight: normal;
+    }
+}
+
+.content {
+    flex: 1 1 auto;
+    
+    &__row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__hi {
+        padding: 30px;
+        margin: 180px 0 0 0;
+        form, p {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__row1 {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 100px 20px 100px;
+    }
+
+    &__list {
+        margin: 50px auto;
+        max-width: 500px;
+    }
+}
+
+.content__options {
+
+    display: flex;
+    justify-content: space-between;
+}

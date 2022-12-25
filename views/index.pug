@@ -1,0 +1,21 @@
+doctype html
+html(lang='ru')
+html
+    head
+        title= title
+        link(rel="stylesheet", href="/public/css/style.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    body
+        .wrapper
+            .header
+                .header__row
+                    h1= title
+            .content
+                .container
+                    .content__row
+                        .content__hi
+                            p Добро пожаловать в библиотеку!
+                            p
+                                img(src="/public/icons/book.png" alt="Book" width="70px" height="70px")
+                            form(action = "/books" method = "GET")
+                                button(class = "entry" type = "Submit") ПЕРЕЙТИ

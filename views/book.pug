@@ -1,0 +1,92 @@
+doctype html
+html(lang='ru')
+html
+    head
+        link(rel="stylesheet", href="/public/css/style.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    body
+        .wrapper
+            .header
+                .header__row
+                    h1= title
+            .content
+                .container
+                    .content_row2        
+                        .content__list
+                            table(id="table1")
+                                caption Информация о книге:
+                                    tr
+                                        th id
+                                        th #{item.id}
+                                    tr 
+                                        th Название
+                                        th #{item.name}   
+                                    tr
+                                        th Автор    
+                                        th #{item.au}
+                                    tr
+                                        th Год выпуска    
+                                        th #{item.date}
+                                    tr
+                                        th Наличие    
+                                        th #{item.in_library}
+                                    tr
+                                        th Читатель    
+                                        th #{item.person}
+                                    tr
+                                        th Дата Возврата    
+                                        th #{item.return_date} 
+                        .content__options
+                            if item.in_library === "нет"    
+                                button(class = "btn__book" disabled = true style="cursor:not-allowed") Взять книгу
+                            else
+                                button(class = "btn__book" onclick = "document.getElementById('id01').style.display='block'") Взять книгу
+                            #id01.modal
+                                .modal__content
+                                    span(class = "close" onclick="document.getElementById('id01').style.display='none'") &times;
+                                    br
+                                    form(action = "take" method = "POST")
+                                        br
+                                        input(name = "i" value=`${item.id}` disabled = false style="display:none" type="text")
+                                        p Введите имя читателя:
+                                        input(name = "nm" required type="text")
+                                        p Введите дату возвращения книги:
+                                        input(type="date" name = "dt" required)
+                                        div
+                                            button(class = "btn__ok" type = "submit") OK
+                                            p
+                                .overlay
+                            if item.in_library === "нет"
+                                form(action = "back", method = "POST")
+                                    input(name = "i" value = `${item.id}` disabled = false style = "display:none" type = "text")
+                                    button(class = "btn__book") Вернуть книгу
+                            else    
+                                button(class = "btn__book" disabled = true style="cursor:not-allowed") Вернуть книгу
+                            if item.in_library === "нет"
+                                button(class = "btn__book" disabled = true style="cursor:not-allowed") Редактировать книгу
+                            else
+                                button(class = "btn__book" onclick="document.getElementById('id02').style.display='block'") Редактировать книгу
+                            #id02.modal
+                                .modal__content
+                                    span(class = "close" onclick="document.getElementById('id02').style.display='none'") &times;
+                                    br
+                                    form(action = "edit" method = "POST")
+                                        table
+                                            caption Информация о книге:
+                                            tr 
+                                                th Название
+                                                th 
+                                                    input(name = "i" value = `${item.id}` disabled = false style = "display:none" type = "text")
+                                                    input(name = "nm" value = item.name required)  
+                                            tr
+                                                th Автор    
+                                                th 
+                                                    input(name = "au" value = item.au required)
+                                            tr
+                                                th Год выпуска    
+                                                th
+                                                    input(type = "date" name = "dt" value = item.data)
+                                        div
+                                            button(class = "btn__ok" type = "submit") OK
+                                            p
+                                .overlay          

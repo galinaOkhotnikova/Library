@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-weight: 550;
+  text-transform: uppercase;
+  color: rgb(106, 106, 106);
+}
+
+input {
+  font-family: Arial;
+  text-transform: uppercase;
+  height: 30px;
+  border: 1px solid #818181;
+  transition: box-shadow 0.2s ease-in-out;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px 5px rgba(70, 131, 180, 0.3803921569);
+}
+
+.delete,
+.add {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  font-size: 25px;
+  transition: transform 0.2s ease-in-out;
+}
+.delete:hover,
+.add:hover {
+  transform: translateY(-5px);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 50px 0;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: white;
+  color: #B0C4DE;
+}
+tbody tr:nth-child(odd) a, tbody tr:nth-child(odd) i {
+  color: #B0C4DE;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #B0C4DE;
+  color: white;
+}
+tbody tr:nth-child(even) a, tbody tr:nth-child(even) i {
+  color: white;
+}
+
+.btn {
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.btn:hover {
+  color: #4682B4;
+  transform: translateY(-5px);
+}
+
+.btn__book {
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  color: white;
+  background-color: #B0C4DE;
+  border: 1px solid #91a8c6;
+  font-weight: 550;
+  font-size: 16px;
+  transition: backgroung 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+.btn__book:hover {
+  background: #c2d1e6;
+}
+.btn__book:active {
+  background: #9eb7d6;
+}
+
+.btn__ok {
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  color: white;
+  background-color: #6f8198;
+  border: 1px solid #455366;
+  border-radius: 10px;
+  font-weight: 550;
+  font-size: 16px;
+  transition: backgroung 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+.btn__ok:hover {
+  background: #63748a;
+}
+.btn__ok:active {
+  background: #58687c;
+}
+
+.entry {
+  height: 50px;
+  background-color: #B0C4DE;
+  border: 1px solid #91a8c6;
+  color: white;
+  font-weight: 550;
+  font-size: 16px;
+  width: 200px;
+  border-radius: 15px;
+  margin: 0 auto;
+  transition: backgroung 0.2s ease-in-out;
+}
+.entry:hover {
+  background: #c2d1e6;
+}
+.entry:active {
+  background: #9eb7d6;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  padding: 10px;
+}
+.close:hover {
+  color: #848484;
+}
+.close:active {
+  color: #515151;
+}
+
+.modal {
+  display: none;
+  text-align: center;
+}
+.modal__content {
+  position: fixed;
+  z-index: 1;
+  top: 200px;
+  left: 475px;
+  border: 1px solid #91a8c6;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.0941176471);
+  width: 600px;
+  height: 315px;
+  background-color: #B0C4DE;
+}
+.modal__content input {
+  border-radius: 10px;
+}
+.modal__content button {
+  margin-top: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #91a8c6;
+  height: 70px;
+}
+.header h1 {
+  margin: 3px 0 0 0;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  font-family: "Great Vibes";
+  text-transform: none;
+  font-weight: normal;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+.content__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content__hi {
+  padding: 30px;
+  margin: 180px 0 0 0;
+}
+.content__hi form, .content__hi p {
+  align-items: center;
+  text-align: center;
+}
+.content__row1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px 20px 100px;
+}
+.content__list {
+  margin: 50px auto;
+  max-width: 500px;
+}
+
+.content__options {
+  display: flex;
+  justify-content: space-between;
+}
